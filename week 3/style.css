@@ -3,6 +3,14 @@ header{
     text-align: center;
 }
 
-.col-3.bg-secondary {
+.Side-Stories{
     color: white !important;
+}
+
+.Primary-Stories .bg-warning{
+    border: white solid 2px;
+}
+
+.Lower-Stories .bg-info{
+    border: white solid 2px;
 }
