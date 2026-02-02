@@ -1,0 +1,180 @@
+/* Reset basics */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #fff;
+  color: #111;
+}
+
+/* Header */
+header {
+  background-color: #bb1919;
+  color: #fff;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  padding: 0.5rem 16px; /* small left inset, no margin-left to avoid white gap */
+  border-bottom: 4px solid #bb1919; /* BBC red accent */
+}
+
+/* "News" title on the left spanning both rows */
+header h1 {
+  grid-row: 1 / span 2;
+  grid-column: 1;
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* Two horizontal nav rows */
+header ul {
+  grid-column: 2;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+header ul li {
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1;
+  padding: 6px 8px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+header ul li:hover {
+  background: #222;
+}
+
+/* Main container */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr; /* primary column + two secondary */
+  grid-auto-rows: auto;
+  gap: 16px;
+}
+
+/* Main story spans taller area */
+.mainStory {
+  grid-column: 1;
+  grid-row: 1 / span 2; /* taller block */
+  background: #f4f4f4;
+  border-top: 3px solid #bb1919;
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.mainStory img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.mainStory h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.mainStory p {
+  margin: 0;
+  color: #444;
+}
+
+/* Secondary stories fill remaining grid cells */
+.secondaryStory {
+  background: #f8f8f8;
+  padding: 10px;
+  display: grid;
+  gap: 8px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.secondaryStory img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.secondaryStory h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.secondaryStory p {
+  margin: 0;
+  color: #555;
+}
+
+/* Tertiary stories: compact cards under the grid */
+.tertiaryStory {
+  background: #fafafa;
+  padding: 10px;
+  display: grid;
+  gap: 8px;
+  border: 1px solid #eee;
+}
+
+.tertiaryStory img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.tertiaryStory h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+  .mainStory {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  header h1 {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 1.5rem;
+  }
+  header ul {
+    grid-column: 1;
+  }
+  main {
+    grid-template-columns: 1fr;
+  }
+}

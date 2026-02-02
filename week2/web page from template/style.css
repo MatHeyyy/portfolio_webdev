@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  header {
+    background-color: black;
+    display: flex;
+    justify-content: left;
+    color: white;
+    padding: 1rem;
+    gap: 3rem;
+    margin-left: 5px;
+    margin: 0;
+  }
+
+  .site-title {
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .menu-button{
+    width: 36px;
+    height: 20px;
+    background-color: #bfbfbf;
+    border: 1px;
+    border-radius: 4px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 4px;
+    padding: 4px 6px;
+    cursor: pointer;
+  }
+
+  .menu-button span{
+    display: block;
+    height: 2px;
+    background-color: #333;
+    border-radius: 1px;
+  }
+  
+  main {
+    display: flex;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .main-left {
+    background-color: #e0e0e0;
+    color: black;
+    flex: 3;
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  .main-right {
+    background-color: #A9A9A9;
+    color: black;
+    flex: 1;
+    text-align: left;
+    padding: 1rem;
+  }
+  
+  footer {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5px;
+  }
+  
+  footer div {
+    background-color: lightgray;
+    flex: 1;
+    text-align: left;
+    padding: 0.5rem;
+    color: black;
+  }
+  
+  /* Fixes alignment of footer elemnts to match up with main content */
+  footer div:first-child {
+    margin-left: 0;
+    background-color: grey;
+  }
+  
+  footer div:last-child {
+    margin-right: 0;
+    background-color: darkgrey;
+  }
